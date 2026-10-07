@@ -1,64 +1,53 @@
-# 🎬 Movie Review Sentiment Classification using Naive Bayes
+# Movie Review Sentiment Classification using Naive Bayes
 
-A simple **movie review sentiment classifier** built from scratch in Python using the **Multinomial Naive Bayes** algorithm.
+## Overview
 
-The program reads movie reviews, processes their text, learns the relationship between words and sentiment, and then predicts whether unseen reviews are **positive** or **negative**.
+This project implements a **Movie Review Sentiment Classification system** using a **Multinomial Naive Bayes classifier** from scratch in Python.
 
-> 📚 Developed as a Programming for AI project at FAST-NUCES.
+The program reads positive and negative movie reviews, preprocesses the text, builds a vocabulary, calculates probabilities using Laplace smoothing, and classifies unseen movie reviews as **POSITIVE** or **NEGATIVE**.
 
----
+This project was developed for the **Programming for AI** course at **FAST-NUCES**.
 
-## 📌 What is this project?
+## Features
 
-Have you ever written a movie review like:
+- Reads positive, negative, and test reviews from folders
+- Converts text to lowercase
+- Removes punctuation
+- Tokenizes reviews into words
+- Removes stop words
+- Builds positive and negative word-frequency dictionaries
+- Calculates class priors
+- Uses Laplace smoothing
+- Uses logarithmic probabilities
+- Classifies test reviews as POSITIVE or NEGATIVE
+- Generates a `predictions.txt` file containing the final predictions
 
-> "The movie was amazing and I really enjoyed it."
+## Dataset
 
-A human can easily understand that this review is positive.
+The dataset contains:
 
-But how can a computer understand it?
+- 900 positive movie reviews
+- 900 negative movie reviews
+- 200 unlabeled test reviews
+- An English stop-word file
 
-This project demonstrates one way to solve this problem using **Natural Language Processing (NLP)** and **Naive Bayes classification**.
+### Dataset Structure
 
-The program learns from a collection of reviews that are already labeled as:
-
-- **Positive** 😊
-- **Negative** 😞
-
-It then uses what it learned to classify new, unseen reviews.
-
----
-
-## 🧠 How Does It Work?
-
-The project follows these main steps:
+After extracting `data.zip`, the project should have the following structure:
 
 ```text
-Movie Reviews
-      │
-      ▼
-Read the Reviews
-      │
-      ▼
-Preprocess the Text
-      │
-      ▼
-Remove Stop Words
-      │
-      ▼
-Build Word Frequencies
-      │
-      ▼
-Train Naive Bayes Model
-      │
-      ▼
-Read Test Reviews
-      │
-      ▼
-Calculate Positive & Negative Scores
-      │
-      ▼
-Predict Sentiment
-      │
-      ▼
-predictions.txt
+movie-review-sentiment-naive-bayes/
+│
+├── main.py
+├── README.md
+├── predictions.txt
+├── .gitignore
+├── data.zip
+│
+└── data/
+    ├── english.stop
+    │
+    └── imdb1/
+        ├── pos/
+        ├── neg/
+        └── test/
